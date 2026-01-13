@@ -1,0 +1,16 @@
+#ddev-generated: Automatically generated ddev .gitignore.
+
+# Ddev
+/wp-config-ddev.php
+
+# WordPress
+wp-content/uploads/
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs
+*.log
