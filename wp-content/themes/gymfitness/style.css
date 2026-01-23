@@ -40,6 +40,7 @@ body{
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--headings-font);
     margin: 0 0 0.5rem 0;
+    line-height: 1.25
 }
 
 p{
@@ -58,13 +59,17 @@ ol {
   padding: 0;
 }
 
-.contenedor{
+.contenedor {
     max-width: 90%;
     margin: 0 auto;
 }
 
-.contenedor-centrado{
+.contenedor-centrado {
     max-width: 70%;
+}
+
+.contenedor h1 {
+    margin: 2rem 0;
 }
 
 .text-center {
@@ -167,6 +172,7 @@ header{
     padding-bottom: 3rem;
     object-fit: cover;
     width: 100%;
+    height: auto;
 }
 
 /* End Nosotros */
@@ -231,3 +237,14 @@ header{
 }
 
 /* End Cards */
+
+/* Sidebar */
+
+@media (min-width: 768px) {
+    .has-sidebar{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 3.5rem;
+    }
+}
+/* End sidebar */

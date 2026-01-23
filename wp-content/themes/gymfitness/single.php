@@ -1,0 +1,1 @@
+<h1>Default template for posts</h1>

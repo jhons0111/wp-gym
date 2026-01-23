@@ -35,3 +35,19 @@ function gymfitness_setup() {
     add_theme_support('title-tag');
 }
 add_action('after_setup_theme', 'gymfitness_setup', 1);
+
+function gymfitness_widgets() {
+
+    register_sidebar( array(
+        'name'          => 'Sidebar 1',
+        'id'            => 'sidebar_1',
+        'description'   => 'Sidebar principal del tema GymFitness',
+        'before_widget' => '<div class="widget">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="text-center text-primary">',
+        'after_title'   => '</h3>',
+    ));
+}
+
+add_action( 'widgets_init', 'gymfitness_widgets' );
+
