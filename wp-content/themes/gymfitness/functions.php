@@ -1,5 +1,9 @@
 <?php
 
+// Includes
+require get_template_directory() . '/includes/widgets.php';
+
+
 function gymfitness_menus(){
 
     register_nav_menus([
@@ -39,7 +43,7 @@ add_action('after_setup_theme', 'gymfitness_setup', 1);
 function gymfitness_widgets() {
 
     register_sidebar( array(
-        'name'          => 'Sidebar 1',
+        'name'          => 'Sidebar 111',
         'id'            => 'sidebar_1',
         'description'   => 'Sidebar principal del tema GymFitness',
         'before_widget' => '<div class="widget">',
