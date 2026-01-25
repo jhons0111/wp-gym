@@ -13,9 +13,47 @@ class GymFitness_Clases_Widget extends WP_Widget {
 	}
 
 	public function widget( $args, $instance ) {
-        
-        echo $instance['cantidad'];
-	}
+    ?>  
+        <ul>
+            <?php
+
+            $args = array(
+                'post_type' => 'gymfitness_clases',
+                'posts_per_page' => $instance['cantidad']
+            );
+            $classes = new WP_Query($args);
+            while($classes->have_posts()){
+                $classes->the_post();
+            ?>
+                <li class="div">
+                    <div class="imagen">
+                        <?php echo the_post_thumbnail('thumbnail'); ?>
+                    </div>
+                    <div class="contenido-clase">
+                        <a href="<?php the_permalink(); ?>">
+                        <h3>
+                            <?php the_title(); ?>
+                        </h3>
+                        </a>
+
+                        <?php 
+                        
+                            $start_time = get_field('hora_inicio');
+                            $end_time = get_field('hora_fin');
+                        ?>
+                        <p>
+                            <?php the_field('dia_clase') ?> -  
+                            <?php echo $start_time . ' a ' . $end_time ?>
+                        </p>
+                    </div>
+                </li>
+            <?php
+            }
+            wp_reset_postdata();
+        ?>
+        </ul>
+	<?php
+    }
 
     public function form( $instance ) {
         $cantidad = !empty($instance['cantidad']) ? $instance['cantidad'] : esc_html('¿Cuantas clases deseas mostrar?');

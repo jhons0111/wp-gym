@@ -43,7 +43,7 @@ add_action('after_setup_theme', 'gymfitness_setup', 1);
 function gymfitness_widgets() {
 
     register_sidebar( array(
-        'name'          => 'Sidebar 111',
+        'name'          => 'Sidebar 1',
         'id'            => 'sidebar_1',
         'description'   => 'Sidebar principal del tema GymFitness',
         'before_widget' => '<div class="widget">',
