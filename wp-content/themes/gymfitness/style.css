@@ -236,6 +236,16 @@ header{
     display: block;
 }
 
+.meta {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.meta a {
+    margin-top: 0px !important;
+}
+
 /* End Cards */
 
 /* Sidebar */
@@ -313,3 +323,23 @@ header{
 }
 
 /* End gallery */
+
+/* Meta info */
+
+.meta-info {
+    background-color: var(--gris-claro);
+    padding: 2rem;
+}
+
+.meta-info p,
+.meta-info a {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--negro);
+}
+
+.meta-info span {
+    color: var(--primary-color);
+}
+
+/* End meta info */
