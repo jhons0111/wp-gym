@@ -343,3 +343,48 @@ header{
 }
 
 /* End meta info */
+
+/* Home */
+
+.areas {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+}
+
+.area{
+    height: 20rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.area::after {
+    content: '';
+    background-image: linear-gradient( rgb(0 0 0 / 0.6), rgb(0 0 0 / 0.6) );
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+}
+
+.area > img {
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+}
+
+.area > p {
+    position: absolute;
+    color: var(--blanco);
+    z-index: 9;
+}
+
+@media(min-width: 768px) {
+
+    .areas {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* End home */

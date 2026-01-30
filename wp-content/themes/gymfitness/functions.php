@@ -2,6 +2,7 @@
 
 // Includes
 require get_template_directory() . '/includes/widgets.php';
+require get_template_directory() . '/includes/queries.php';
 
 
 function gymfitness_menus(){
