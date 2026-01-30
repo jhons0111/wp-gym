@@ -55,3 +55,16 @@ function gymfitness_widgets() {
 
 add_action( 'widgets_init', 'gymfitness_widgets' );
 
+//Create shortcode
+
+function gymfitness_location_shortcode(){
+?>
+
+<h2 class="text-center text-primary">Formulario de contacto</h2>
+<?php
+
+ echo do_shortcode('[contact-form-7 id="85006b3" title="Contact form 1"]');
+
+}
+
+add_shortcode('gymfitness_location', 'gymfitness_location_shortcode');

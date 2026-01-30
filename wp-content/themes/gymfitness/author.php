@@ -1,7 +1,4 @@
 <?php
-    /*
-    * Template Name: Contenido listado de clases
-    */
     get_header();
 ?>
 

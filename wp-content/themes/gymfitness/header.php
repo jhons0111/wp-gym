@@ -8,10 +8,11 @@
 <body>
     <header class="header">
         <div class="contenedor barra-navegacion">
-            <div class="logo">
-                <img src=" <?php echo get_template_directory_uri(); ?>/img/logo.svg " alt="">
-            </div>
-
+            <a href="<?php echo site_url('/'); ?>">
+                <div class="logo">
+                    <img src=" <?php echo get_template_directory_uri(); ?>/img/logo.svg " alt="">
+                </div>
+            </a>
             <?php 
                 $args = [
                     'theme_location' => 'menu-principal',
