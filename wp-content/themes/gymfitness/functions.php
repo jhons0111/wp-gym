@@ -22,6 +22,11 @@ function gymfitness_scripts_styles(){
     wp_enqueue_style('normalize', 'https://necolas.github.io/normalize.css/8.0.1/normalize.css', array(), '8.0.1');
     wp_enqueue_style('style', get_stylesheet_uri(), array('normalize'), '1.0.0');
     wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Staatliches&display=swap', array(), null);
+    wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css', array(), '12.1.0');
+
+    // JS files
+    wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js', array(), '12.1.0');
+    wp_enqueue_script('scripts-js', get_template_directory_uri() . '/js/scripts.js', array('swiper-js'), '1.0.0', true);
 }
 
 add_action('wp_enqueue_scripts', 'gymfitness_scripts_styles');

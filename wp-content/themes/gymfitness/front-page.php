@@ -2,7 +2,7 @@
     get_header();
 ?>
 
-    <main class="">
+    <main class="front-page">
         <section class="welcome contenedor seccion text-center">
             <h2 class="text-primary"><?php echo esc_html(the_field('encabezado_bienvenida')); ?></h2>
             <p><?php echo esc_html(the_field('texto_bienvenida')); ?></p>
@@ -57,6 +57,15 @@
             <?php
                 gymfitness_list_all_class(3);
             ?>
+        </section>
+        <section class="testimonials ">
+            <h2 class="text-center text-primary">Testimoniales</h2>
+
+            <div class="container-testimonials swiper">
+                <?php
+                    gymfitness_list_all_testimonials();
+                ?>
+            </div>
         </section>
     </main>
 
