@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php wp_head(); ?>
 </head>
-<body>
+<body <?php body_class(); ?>>
     <header class="header">
         <div class="contenedor barra-navegacion">
             <a href="<?php echo site_url('/'); ?>">
@@ -23,4 +23,14 @@
                 wp_nav_menu($args);
             ?>
         </div>
+        <?php if(is_front_page()) : ?>
+            <div class="tag-line text-center">
+                <h1 class="ml2">
+                    <?php the_field('hero_title'); ?>
+                </h1>
+                <p>
+                    <?php the_field('hero_text') ?>
+                </p>
+            </div>
+        <?php endif; ?>
     </header>

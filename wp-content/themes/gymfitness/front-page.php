@@ -58,7 +58,7 @@
                 gymfitness_list_all_class(3);
             ?>
         </section>
-        <section class="testimonials ">
+        <section class="testimonials">
             <h2 class="text-center text-primary">Testimoniales</h2>
 
             <div class="container-testimonials swiper">
@@ -66,6 +66,27 @@
                     gymfitness_list_all_testimonials();
                 ?>
             </div>
+        </section>
+        <section class="posts">
+            <h2 class="text-center text-primary">Blog</h2>
+
+            <ul class="listado-grid">
+                <?php
+                
+                    $args = array(
+                        'post_type' => 'post',
+                        'posts_per_page' => 4
+                    );
+                    $blog = new WP_Query($args);
+
+                    while($blog->have_posts()){
+                        $blog->the_post();
+
+                        get_template_part('template-parts/blog');
+                    }
+                    wp_reset_postdata();
+                ?>
+            </ul>
         </section>
     </main>
 

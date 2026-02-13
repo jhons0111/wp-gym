@@ -95,6 +95,23 @@ header{
     padding: 1.8rem 0;
 }
 
+body.home header{
+    padding-top: 2rem;
+    height: 95vh;   
+}
+
+body.home header .tag-line{
+    color: var(--blanco);
+    margin-top: 20vh;
+}
+
+@media (min-width:768px) {
+    body.home .header{
+        padding-top: 2rem;
+        height: 100vh;   
+    }
+}
+
 .barra-navegacion{
     display: flex;
     flex-direction: column;
@@ -162,9 +179,20 @@ header{
     .menu-principal a:hover::after {
         transform: scaleX(1);
     }
-
-    /* End Header */
 }
+
+.ml2 {
+    font-weight: 900;
+    font-size: 3.5em;
+}
+
+.ml2 .letter {
+    display: inline-block;
+    line-height: 1em;
+}
+
+/* End Header */
+
 
 /* Nostros */
 

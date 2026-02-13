@@ -26,7 +26,8 @@ function gymfitness_scripts_styles(){
 
     // JS files
     wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js', array(), '12.1.0');
-    wp_enqueue_script('scripts-js', get_template_directory_uri() . '/js/scripts.js', array('swiper-js'), '1.0.0', true);
+    wp_enqueue_script('anime-js', 'https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js', array(), null);
+    wp_enqueue_script('scripts-js', get_template_directory_uri() . '/js/scripts.js', array('swiper-js', 'anime-js'), '1.0.0', true);
 }
 
 add_action('wp_enqueue_scripts', 'gymfitness_scripts_styles');
@@ -74,3 +75,27 @@ function gymfitness_location_shortcode(){
 }
 
 add_shortcode('gymfitness_location', 'gymfitness_location_shortcode');
+
+// hero styles
+function gymfitness_hero_img() {
+
+    $front_id = get_option('page_on_front');
+    $id_image = get_field('hero_image', $front_id);
+    $image = wp_get_attachment_image_src($id_image, 'full')[0];
+
+    // var_dump($image);
+    // cretaes css
+    wp_register_style('custom-styles', false);
+    wp_enqueue_style('custom-styles');
+
+    $featured_image_css = "
+        body.home .header{
+            background-image: linear-gradient( rgb(0 0 0 / .75), rgb(0 0 0 / .75)), url($image);
+        }
+    ";
+
+    // inject css
+    wp_add_inline_style('custom-styles', $featured_image_css);
+}
+
+add_action('init', 'gymfitness_hero_img');
